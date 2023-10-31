@@ -32,15 +32,22 @@ const militaryHelicopter = [
 
 class Gallery {
     constructor(civilImages, militaryImages) {
+        this.civilImages = civilImages
+        this.militaryImages = militaryImages
     }
     
-    getRandomCivil() {
+    getRandomCivil = () => {
+        let randomImage = Math.floor(Math.random() * this.civilImages.length)
+        return this.civilImages[randomImage]
     }
     
     getRandomMilitary() {
+        let randomImage = Math.floor(Math.random() * this.militaryImages.length)
+        return this.militaryImages[randomImage]
     }
     
     getAll() {
+        return this.civilImages.concat(this.militaryImages)
     }
 }
 
